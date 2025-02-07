@@ -1,0 +1,147 @@
+.add-items-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  padding-left: 5%;
+}
+@media (max-width: 900px) {
+  .add-items-container {
+    justify-content: inherit;
+    gap: 20px;
+  }
+}
+.add-items-container label {
+  color: gray;
+}
+@media (max-width: 462px) {
+  .add-items-container label {
+    font-size: 12px;
+  }
+}
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.image-upload label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.image-upload img {
+  width: 150px;
+  border-radius: 8px;
+}
+@media (max-width: 462px) {
+  .image-upload img {
+    width: 120px;
+  }
+}
+
+.product-name {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.product-name input {
+  width: 25vw;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid rgb(218, 212, 212);
+  font-size: 15px;
+}
+@media (max-width: 900px) {
+  .product-name input {
+    width: 40vw;
+  }
+}
+@media (max-width: 462px) {
+  .product-name input {
+    width: 50vw;
+    font-size: 10px;
+  }
+}
+.product-description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.product-description textarea {
+  width: 25vw;
+  border: 2px solid rgb(218, 212, 212);
+  outline: none;
+  border-radius: 5px;
+}
+@media (max-width: 900px) {
+  .product-description textarea {
+    width: 40vw;
+  }
+}
+@media (max-width: 462px) {
+  .product-description textarea {
+    width: 50vw;
+    font-size: 10px;
+  }
+}
+.product-cat-price {
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 462px) {
+  .product-cat-price {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.product-cat-price div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.product-cat-price input {
+  border: 2px solid rgb(218, 212, 212);
+  padding: 5px;
+  outline: none;
+  border-radius: 5px;
+  color: gray;
+  font-weight: 600;
+}
+.product-cat-price select {
+  outline: none;
+  padding: 5px;
+  border: 2px solid rgb(218, 212, 212);
+  border-radius: 5px;
+  color: gray;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 462px) {
+  .product-cat-price select {
+    width: 50vw;
+  }
+  .product-cat-price input {
+    width: 50vw;
+  }
+}
+.product-add {
+  background-color: black;
+  color: #ffffff;
+  padding: 10px 40px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 462px) {
+  .product-add {
+    padding: 8px 20px;
+    font-size: 8px;
+  }
+}

@@ -1,0 +1,35 @@
+.qrcodes-container{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+}
+.qrcode{
+    border: 2px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 15px;
+}
+.qr-download-btn{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(111, 111, 217);
+    border: none;
+    color: #ffffff;
+    width: 80%;
+}
+.qr-print-btn{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(247, 80, 80);
+    border: none;
+    color: #ffffff;
+    width: 80%;
+}

@@ -1,0 +1,129 @@
+.admin-orders-container {
+  width: 100%;
+  height: 100%;
+  padding-left: 5%;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.add-del-table-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+}
+.add-del-table-btn {
+  border: 1px solid gray;
+  background-color: rgb(173, 173, 240);
+  width: 150px;
+  border-radius:5px ;
+  padding: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer; /* Add pointer cursor for better UX */
+  transition: transform 0.1s ease, box-shadow 0.1s ease; /* Smooth transition for effects */
+
+}
+.add-del-table-btn:hover {
+  background-color: rgb(200, 200, 200); /* Slight color change on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow effect on hover */
+}
+
+.add-del-table-btn:active {
+  transform: scale(0.95); /* Slightly shrink the button on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow for pressed effect */
+}
+.add-del-table-btn p{
+  font-weight: 700;
+  color: gray;
+  font-size: 15px;
+
+}
+.add-del-table-btn img{
+  width: 25px;
+}
+.table-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.selected-table {
+  background-color: rgb(213, 209, 209) !important;
+}
+.table-container div {
+  border: 1px solid gray;
+  padding: 10px 30px;
+  color: gray;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: rgb(252, 247, 247);
+  text-align: center;
+  cursor: pointer;
+}
+@media (max-width: 1020px) {
+  .table-container div p {
+    font-size: 12px;
+  }
+  .add-del-table-btn p{
+    font-size: 12px;
+  }
+  .add-del-table-btn{
+    padding: 8px;
+    width: 120px;
+  }
+  
+}
+@media (max-width: 762px) {
+  .table-container {
+    justify-content: inherit;
+    gap: 10px;
+  }
+}
+.table-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  width: 100%;
+}
+.table-items-title {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 2fr;
+  align-items: center;
+  gap: 3px;
+}
+.table-items-item {
+  margin: 10px 0;
+}
+.table-items-item img {
+  width: 50px;
+}
+.table-items-item select {
+  width: 120px;
+}
+
+@media (max-width: 468px) {
+  .table-items-title p {
+    font-size: 10px;
+  }
+  .add-del-table-btn p{
+    font-size: 10px;
+  }
+  .add-del-table-btn{
+    padding: 6px;
+    width: 100px;
+  }
+  .add-del-table-btn img{
+    width: 18px;
+  }
+  .table-items-title select {
+    font-size: 7px;
+    width: 60px;
+  }
+}
