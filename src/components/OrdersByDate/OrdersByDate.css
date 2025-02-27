@@ -1,15 +1,13 @@
 /* Container Styling */
 .orders-by-date-container {
-  
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding-left: 5%;
-  padding-right: 5px;
-  overflow-y: scroll;
+  padding: 0 5%;
+  overflow-y: auto; /* Changed from scroll to auto */
   background: #ffffff;
   text-align: center;
 }
@@ -69,8 +67,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-
-
 /* Orders List */
 .orders-list {
   margin-top: 20px;
@@ -85,10 +81,13 @@ button:disabled {
 .orders-header,
 .orders-row {
   display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr 3fr 1fr ;
+  grid-template-columns: 2fr 1fr 1.5fr 3fr 1fr;
   padding: 12px 16px;
   font-size: 16px;
   gap: 5px;
+  border-radius: 6px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
 }
 
 .orders-header {
@@ -102,7 +101,8 @@ button:disabled {
 }
 
 .orders-row:hover {
-  background-color: #e6f0ff;
+  background-color: rgba(0, 123, 255, 0.2);
+  transition: background-color 0.3s ease-in-out;
 }
 
 /* No Orders Message */
@@ -111,23 +111,46 @@ h3 {
   margin-top: 20px;
 }
 
-@media (max-width:1100px) {
-  p{
+/* Responsive Font Sizes */
+@media (max-width: 1100px) {
+  p {
     font-size: 13px;
   }
 }
-@media (max-width:762px) {
-  p{
+
+@media (max-width: 762px) {
+  p {
     font-size: 11px;
   }
 }
-@media (max-width:562px) {
-  p{
-    font-size: 9px;
 
+@media (max-width: 562px) {
+  p {
+    font-size: 9px;
   }
-  .orders-header p:nth-child(4), 
-  .orders-row p:nth-child(4) {   
+
+  .orders-header p:nth-child(4),
+  .orders-row p:nth-child(4) {
     display: none;
   }
+}
+
+/* OrderDetails Animation */
+.order-details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.order-details.open {
+  max-height: 300px; /* Increased for dynamic content */
+  opacity: 1;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: scroll;
 }

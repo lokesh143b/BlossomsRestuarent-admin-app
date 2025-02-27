@@ -5,13 +5,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AdminContext } from "../../context/AdminContext";
 import { useNavigate } from "react-router-dom";
+import OrderDetails from "../OrderDetails/OrderDetails"
 
 const OrdersByDate = () => {
   const [orders, setOrders] = useState([]);
   const [selectedDate, setSelectedDate] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { backend_url } = useContext(AdminContext);
-  const navigate = useNavigate()
+  const [selectedOrderId, setSelectedOrderId] = useState(null);
+  const navigate = useNavigate();
 
   // Fetch orders by date
   const fetchOrdersByDate = async () => {
@@ -76,15 +78,33 @@ const OrdersByDate = () => {
                 </div>
                 <hr />
                 {orders.map((order) => (
-                 
-                    <div onClick={()=> navigate("/order-details")} key={order.order._id} className="orders-row">
+                  <div key={order.order._id}>
+                    <div
+                      className="orders-row"
+                      onClick={() =>
+                        setSelectedOrderId(
+                          selectedOrderId === order.order._id
+                            ? null
+                            : order.order._id
+                        )
+                      }
+                    >
                       <p>{order.order._id}</p>
                       <p>{order.table.tableNo}</p>
                       <p>{order.user.name}</p>
                       <p>{order.user.email}</p>
                       <p>₹ {order.order.totalAmount}</p>
                     </div>
-                  
+
+                    {/* Order Details Section */}
+                    <div
+                      className={`order-details ${
+                        selectedOrderId === order.order._id ? "open" : ""
+                      }`}
+                    >
+                      <OrderDetails OrderDetails={order}/>
+                    </div>
+                  </div>
                 ))}
               </div>
             ) : (

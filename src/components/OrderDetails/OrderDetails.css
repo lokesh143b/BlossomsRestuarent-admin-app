@@ -1,0 +1,19 @@
+.order-details-container{
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+    border: 1px solid red;
+
+}
+
+.order-details-image-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 500px;
+}
+
+.order-details-image-container img{
+    width: 80px;
+    border-radius: 3px;
+}
