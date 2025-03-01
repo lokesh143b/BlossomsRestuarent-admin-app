@@ -33,7 +33,7 @@ const AddItems = () => {
 
   const submitForm = async (event) => {
     event.preventDefault();
-    const url = backend_url + "/add/food";
+    const url = backend_url + "/food/add";
 
     const formData = new FormData();
     formData.append("name", name);

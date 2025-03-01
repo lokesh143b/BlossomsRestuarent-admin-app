@@ -4,7 +4,7 @@ import { QRCodeCanvas } from "qrcode.react";
 import { AdminContext } from "../../context/AdminContext";
 
 const TableQrcodes = () => {
-  const { backend_url } = useContext(AdminContext);
+  const { backend_url ,frontend_url} = useContext(AdminContext);
   const [tablesData, setTablesData] = useState([]);
   const qrRefs = useRef({});
 
@@ -53,7 +53,7 @@ const TableQrcodes = () => {
     <div className="qrcodes-container">
       {tablesData.map((table) => (
         <div className="qrcode" key={table._id} ref={(el) => (qrRefs.current[table.tableNo] = el)}>
-          <QRCodeCanvas value={`${backend_url}/${table.tableNo}/${table._id}`} size={200} />
+          <QRCodeCanvas value={`${frontend_url}/login/${table.tableNo}/${table._id}`} size={200} />
           <p>Table No: {table.tableNo}</p>
           <button className="qr-download-btn" onClick={() => handleDownload(table.tableNo)}>Download</button>
           <button className="qr-print-btn" onClick={() => handlePrint(table.tableNo)}>Print</button>

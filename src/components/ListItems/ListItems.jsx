@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./ListItems.css";
-import { food_list } from "../../../../frontend/src/assets/frontend_assets/assets";
 import { MdDelete } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
